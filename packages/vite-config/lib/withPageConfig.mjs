@@ -25,7 +25,7 @@ export function withPageConfig(config) {
         base: '',
         plugins: [react(), isDev && watchRebuildPlugin({ refresh: true })],
         build: {
-          sourcemap: isDev,
+          sourcemap: false,
           minify: isProduction,
           reportCompressedSize: isProduction,
           emptyOutDir: isProduction,

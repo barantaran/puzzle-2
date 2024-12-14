@@ -35,7 +35,7 @@ export default defineConfig({
     },
     outDir,
     emptyOutDir: false,
-    sourcemap: isDev,
+    sourcemap: false,
     minify: isProduction,
     reportCompressedSize: isProduction,
     watch: watchOption,
