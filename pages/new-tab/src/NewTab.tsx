@@ -16,7 +16,7 @@ import 'swiper/css/pagination';
 
 interface StorageItem {
   kind: string;
-  mediaLink: string;
+  imgUrl: string;
   name: string;
   timeCreated: string;
 }
@@ -43,7 +43,7 @@ const NewTab = () => {
         const newSlides = data.items.map(item => ({
           title: item.name.replace(/\.[^/.]+$/, ''), // Remove file extension
           description: new Date(item.timeCreated).toLocaleDateString(),
-          image: item.mediaLink,
+          image: `https://storage.googleapis.com/everyday-wallpaper/${item.name}`,
         }));
 
         setSlides(newSlides);
