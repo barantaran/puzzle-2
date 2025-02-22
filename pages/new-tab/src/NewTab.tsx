@@ -78,11 +78,12 @@ const NewTab = () => {
   return (
     <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
       <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
-        <div className="w-full max-w-3xl mx-auto px-4 my-8">
+        <div className="w-full mx-auto px-4 my-8" style={{ maxWidth: '640px' }}>
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectCreative]}
             grabCursor={true}
             effect={'creative'}
+            loop={true}
             creativeEffect={{
               prev: {
                 shadow: true,
@@ -92,12 +93,16 @@ const NewTab = () => {
                 translate: ['100%', 0, 0],
               },
             }}
-            navigation
             className="rounded-xl overflow-hidden shadow-xl">
             {slides.map((slide, index) => (
               <SwiperSlide key={index} onClick={() => setSelectedImage(slide)}>
-                <div className="relative h-[500px] cursor-pointer">
-                  <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+                <div className="relative w-[640px] h-[360px] cursor-pointer">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full h-full object-cover rounded-xl"
+                    loading="lazy"
+                  />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
                     <h3 className="text-lg font-semibold">{slide.title}</h3>
                     <p className="text-sm opacity-80">{slide.description}</p>

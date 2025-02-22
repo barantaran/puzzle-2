@@ -1,0 +1,12 @@
+#puzzle-container canvas {
+  background-color: var(--border-color) !important;
+  border-radius: 12px;
+}
+
+:root[data-theme="light"] {
+  --border-color: hsl(216, 26%, 21%);
+}
+
+:root[data-theme="dark"] {
+  --border-color: hsl(216, 26%, 21%);
+}
